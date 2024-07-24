@@ -6,12 +6,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: List directory contents
-      run: ls -la /home/runner/work/Volopay-Faster-Vite/
+
+    - name: List directory contents before Nuclei run
+      run: ls -la /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite/
+
     - name: Run Nuclei
       uses: projectdiscovery/nuclei-action@main
       with:
         target: "https://volopayassignment.vercel.app/"
-    - name: config nuclei
-      run: nuclei -config /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite/config.yaml
 
+    - name: Create Nuclei config directory
+      run: mkdir -p /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite
+
+    - name: Create Nuclei config file
+      run: echo "your nuclei config content" > /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite/config.yaml
+
+    - name: List directory contents after creating config file
+      run: ls -la /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite/
+
+    - name: Run Nuclei with config
+      run: nuclei -config /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite/config.yaml
