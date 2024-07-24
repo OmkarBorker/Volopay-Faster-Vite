@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: List directory contents
+      run: ls -la /home/runner/work/Volopay-Faster-Vite/
     - name: Run Nuclei
       uses: projectdiscovery/nuclei-action@main
       with:
