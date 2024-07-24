@@ -9,6 +9,7 @@ jobs:
     - name: List directory contents
       run: ls -la /home/runner/work/Volopay-Faster-Vite/
     - name: Run Nuclei
+      run: nuclei -config /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite/config.yaml
       uses: projectdiscovery/nuclei-action@main
       with:
         target: "https://volopayassignment.vercel.app/"
