@@ -12,8 +12,6 @@ jobs:
 
     - name: Run Nuclei
       uses: projectdiscovery/nuclei-action@main
-      with:
-        target: "https://volopayassignment.vercel.app/"
 
     - name: Create Nuclei config directory
       run: mkdir -p /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite
