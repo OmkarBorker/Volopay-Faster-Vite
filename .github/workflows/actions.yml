@@ -8,10 +8,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: List directory contents
       run: ls -la /home/runner/work/Volopay-Faster-Vite/
-    - name: config nuclei
-      run: nuclei -config /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite/config.yaml
     - name: Run Nuclei
       uses: projectdiscovery/nuclei-action@main
       with:
         target: "https://volopayassignment.vercel.app/"
+    - name: config nuclei
+      run: nuclei -config /home/runner/work/Volopay-Faster-Vite/Volopay-Faster-Vite/config.yaml
 
